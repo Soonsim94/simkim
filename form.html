@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style>
+        form{
+            width: 400px;
+            margin: 0 auto;
+            background-color: #ccc;
+            padding: 10px;
+        }
+        fieldset{
+            border: none;
+        }
+        legend{
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+        }
+        form ul{
+            list-style: none;
+            padding: 0; /*기본적으로 패딩이 들어가기 때문에*/
+        }
+        ul li{
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.5);
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+        }
+        .login label{
+            display: inline-block;
+            width: 80px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .login input{
+            padding: 5px;
+            width: 250px;
+        }
+        .btn{
+            text-align: center;
+        }
+        .btn input{
+            width: 100px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset class="login">
+            <legend>로그인 정보</legend>
+            <ul>
+                <!-- <label><input type="text" value="홍길동" min="5" max="5">이름</label><li>
+                     이렇게 하면 라벨의 크기가 커서 디자인하기가 힘듬 -->
+                <li><label for="name">이름</label>
+                    <input id="name" type="text" value="홍길동" minlength="2"></li> 
+                <li><label for="pw">비밀번호</label> 
+                    <input id="pw"type="password" placeholder="8자리 이상"></li>
+                <li><label for="tel">전화번호</label> 
+                    <input id="tel" type="tel" autofocus repuired></li>
+                <li><label for="serch">검색</label>
+                    <input id="serch" type="search"></li>
+                <li><label for="url">인터넷주소</label>
+                    <input id="url" type="url"></li>
+                <li><label for="email">이메일</label>
+                    <input id="email" type="email"></li>
+                <li><label for="num">스핀버튼</label>
+                    <input id="num" type="number" min="2" max="10" step="2" value="2"></li>
+                <li><label for="range">슬라이드</label>
+                    <input id="rangg" type="range" min="1" max="3"></li>
+    
+            </ul>
+        </fieldset>
+        <fieldset>
+            <label><input type="radio" name="radio" value="sp" checked>회화</label>
+            <label><input type="radio" name="radio" value="gr">문법</label>
+            <label><input type="radio" name="radio" value="ls">리스닝</label><br>
+            <!-- 라디오는 *네임이 같아야한다* value는 바로 서버로 넘겨지는 값은 영문만 써야함 
+                네임속성은 반드시 들어가야하며 같아야함 checked 초기값설정 (버튼 고정) -->
+            <label><input type="checkbox" name="chk1" value="sp">회화</label>
+            <label><input type="checkbox" name="chk2" value="gr">문법</label>
+            <label><input type="checkbox" name="chk3" value="ls" checked>리스닝</label> 
+            <!-- 체크박스는 여러개를 설정가능 *네임이 다 달라야함*. 
+            checked는 선택되어져 나오는 초기값설정 -->
+        </fieldset>
+        <fieldset class="login">
+            <ul>
+                <li><label for="date">날짜와 시간</label>
+                    <input id="date" type="datetime-local"></li>
+                <li><label for="day">년월일</label>
+                    <input id="day" type="date"></li>
+                <li><label for="month">년월</label>
+                    <input id="month" type="month"></li>
+                <li><label for="week">몇번째주</label>
+                    <input id="week" type="week"></li>
+                <li><label for="color">색지정</label>
+                    <input id="color" type="color" value="#ffff00"></li>
+                <li><label for="time">시간지정</label>
+                    <input id="time" type="time"></li>
+                <li><label for="file">파일선택</label>
+                    <input id="file" type="file"></li>
+                <li><label for="btn">창닫기</label>
+                    <input id="btn" type="button" value="창닫기" onclick="window.close()"></li>
+                    <!-- close *()*는 함수를 불러서 액션이 되도록 하는것 -->
+            </ul>
+        <fieldset class="btn">
+            <input type="submit" value="전송">
+            <input type="reset" value="취소">
+    </fieldset>
+    </form>
+</body>
+</html>

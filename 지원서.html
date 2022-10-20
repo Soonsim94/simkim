@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>지원서</title>
+    <style>
+        #container{
+            width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid #777;
+        }
+        fieldset{
+            margin: 5px;
+            padding: 5px;
+            border-style: none; 
+        }
+        h1{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h2{
+            color: navy;
+            font-size: 18px;
+        }
+        li{
+            list-style: none;
+            margin: 10px;
+        }
+        ul{
+            margin: 20px;
+        }
+        #user label{
+            display: inline-block;
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>국제 개발자 지원서</h1>
+        <p>HTML, CSS, javascript에 대한 기술적 이해와 경험이 있는 분들을 찾습니다.</p>
+        <hr>
+        <form>
+            <h2>개인정보</h2>
+            <fieldset id="user">
+                <ul>
+                    <li><label for="name">이름</label>
+                        <input id="name" type="text" placeholder="공백 없이 입력하세요"></li>
+                    <li><label for="num">연락처</label>
+                        <input id="num" type="tel"></li>
+                </ul>
+            </fieldset>
+            <h2>지원분야</h2>
+            <fieldset>
+                <ul>
+                    <li><label><input type="radio" name="giwon" value="pub" checked>웹 퍼블리싱</label>
+                    <li><label><input type="radio" name="giwon" value="app" >웹 애플리케이션 개발</label>
+                    <li><label><input type="radio" name="giwon" value="set" >개발 환경 개선</label>    
+                </ul>
+            </fieldset>
+            <h2>지원동기</h2>
+            <fieldset id="memo">
+                    <textarea cols="60" rows="5" placeholder="지원 동기 간략히 써 주세요"></textarea>
+            </fieldset>
+            <fieldset>
+                    <input type="submit" value="접수하기">
+                    <input type="reset" value="다시쓰기">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
