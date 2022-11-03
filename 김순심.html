@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김순심</title>
+    <style>
+        body{
+            width: 800px;
+            margin: 20px auto;
+        }
+        label{
+            width: 100px;
+            display: inline-block;
+            text-align: center
+        }
+        input{
+            margin-left: 5px;
+        }
+        #head{
+            text-align: left;
+            width: 700px;
+        }
+        #move{
+            float: right;
+            width: 300px;
+            height: 400px;
+            padding-top: 100px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h2> lnsert Member Info</h2>
+    <div id="move">
+        <button type="button" id="saveBtn" onclick="saveList()">저장</button>
+    </div>
+    <div>
+    <label>아이디 : <input type="text" id="id" size="30"></label><br>
+    <label>비밀번호 : <input type="text" id="pw" size="30"></label><br>
+    <label>주소 : <input type="text" id="addr" size="30"></label><br>
+    <label>이메일 : <input type="text" id="email" size="30"></label><br>
+    <label>생년월일 : <input type="text" id="birth" size="30"></label><br>
+    </div>
+
+    <p id="head"> &emsp; 아이디 &nbsp; 비밀번호 &emsp; 주소 &ensp; 이메일 &nbsp; 생년월일 &nbsp;</p>
+    <div id="List">
+
+    </div>
+    <script>
+        function saveList(){
+            let id = document.getElementById('id');
+            let pw = document.getElementById('pw');
+            let addr = document.getElementById('addr');
+            let email = document.getElementById('email');
+            let birth = document.getElementById('birth');
+
+            let btn = document.createElement('button');
+            btn.setAttribute('onclick', 'removeInfo()');
+            btn.setAttribute('type', 'button');
+            btn.setAttribute = "삭제";
+
+            let p = document.createElement('p');
+            p.innerHTML = "&emsp;" + id.value + "&nbsp;" + pw.value + "&emsp;" + addr.value + "&ensp;" + email.value+ "&nbsp;" + birth.value+ "&nbsp;";
+
+
+            let div = document.getElementById('List');
+            div.appendChild(p);
+        }
+
+        function removeInfo(){
+            event.target.parentNode.remove();
+        }
+    </script>
+</body>
+</html>
